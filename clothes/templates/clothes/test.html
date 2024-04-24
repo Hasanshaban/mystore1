@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dssdsdsd</title>
+</head>
+<body>
+    {% csrf_token %}
+    
+    {{my_user.gmail}}
+    
+
+    {% csrf_token %}
+    {% for form in form %}
+    <ul>
+      <li>
+        
+    {{form}}
+      </li>
+    </ul>
+    {% endfor %}
+       
+    </body>
+</html>

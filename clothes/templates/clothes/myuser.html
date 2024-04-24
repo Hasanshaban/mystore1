@@ -1,0 +1,22 @@
+{% extends 'clothes/base.html' %}
+{% load static %}
+{% block title %} صفحه{% endblock %}
+
+{% block comment %}
+
+    <div class="container " style="margin-top: 80px; color: rgb(5, 5, 5)">
+        <div class="row " style="width: 900px;height: 300px; ;">
+            {% for my_user in my_user %}
+            <div class="col-md-3"  >
+                <div style="border:10px;width: 200px;background-color: rgb(168, 231, 244);height: 100px;border-radius: 10px;"> 
+                    <li >{{my_user.color}}</li>
+                    <li> {{my_user.name}}</li>
+                    <li> {{my_user.size}}</li> 
+                    <li> {{my_user.delivery_address}}</li> 
+                </div>           
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

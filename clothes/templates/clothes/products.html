@@ -1,0 +1,54 @@
+{% extends 'clothes/base.html' %}
+{% load static %}
+{% block title %} صفحه{% endblock %}
+
+  {% block comment %}
+    <!-- Page Content -->
+    <!-- Items Starts Here -->
+    <div class="featured-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-12">
+            <div class="section-heading">
+              <div class="line-dec"></div>
+              <h1>Featured Items</h1>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div id="filters" class="button-group">
+              <button class="btn btn-primary" data-filter="*">All Products</button>
+              <button class="btn btn-primary" data-filter=".new">Newest</button>
+              <button class="btn btn-primary" data-filter=".low">Low Price</button>
+              <button class="btn btn-primary" data-filter=".high">Hight Price</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="featured container no-gutter" >
+      
+        <div class="row posts" style="text-align: right;"  >
+          {% for clothes in clothes %}
+            <div id="1" class="item new col-md-4">
+              <a href="{% url 'clothes_listview' %}{{clothes.id}}">
+                <div class="featured-item">
+                  <img src="{{clothes.image1.url}}" alt=""></a>
+                  <h4>{{clothes.name}}</h4>
+                  <h6>{{clothes.price}}تومان</h6>
+                  <br>
+                  سایز:
+                  <ul class="row">
+                  {% for sizes in clothes.sizes.all %}
+                  <li class="col-md-4"><h6>{{sizes.name}}</h6></li>
+                  {% endfor %}</ul>
+                  رنگ:
+                  <ul class="row">
+                  {% for color in clothes.color.all %}
+                  <li class="col-md-4"><h6>{{color.name}}</h6></li>
+                  {% endfor %}</ul>
+                </div>
+            </div>
+            {% endfor %}   
+    <!-- Featred Page Ends Here -->
+{% endblock %}>
