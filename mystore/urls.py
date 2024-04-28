@@ -24,19 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home_view,name='home_view'),
-    path('about/',views.about_view,name='about_view'),
-    path('contact/',views.contact_view,name='contact_view'),
-    path('products/',views.clothes_listview,name='clothes_listview'),
-    path('single-product/',views.cloth_info_view,name='cloth_info_view'),
-    path('products/<int:clothes_id>/',views.clothes_info,name='cloth_info'),
-    path('order_list/',views.orderview,name='orderview'),
-    path('signup/',views.signupview,name='signupview'),
-    path('signin/',views.signinview,name='signinview'),
-    path('logout/',views.user_logout,name='user_logout'),
-    path('getorder/',views.get_order,name='get_order'),
-    path('orderview/',views.orderview,name='orderview'),
-    path('get_orderuser/',views.get_orderuser,name='get_orderuser'),
-    path('my_user/',views.User_view,name='User_view'),
+    path('products/',views.clothes_listview,name='clothes_listview'),   
 ]
 
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
